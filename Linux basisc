@@ -1,0 +1,35 @@
+How to break password in Red Hat linux:-
+for break the password we have some steps by which we can break the password of root account of Linux
+Step 1:-  Reboot the system 
+          In starting of system press 'e' for edit in grub mode of linux booting system
+Step 2:-  Now you in grub mode of linux system 
+          In rhel7 or 7.5 we have a line in grub mode start with linux16 
+          In new version of redhat rhel8 line start with linux 
+          at last of file you seen 'rhgb quite' from ahead of this you have to write some break rule for break the password 
+          
+          rd.break enforcing=0 
+          ahead of 'rhgb quite' then press 'ctrl + x' for boot  the display
+         
+         
+         
+Step 3:- Now you in some command mode when you write the code of password break of root . 
+         switch_root:/# 
+         here u write your code 
+         mount -o remount,rw /sysroot/
+         chroot /sysroot/
+         here you find a 'sh' shell now you can change your password
+         sh-4.4# passwd 
+         'passwd' is command to change your password in redhat linux
+         now change ur password after changing the password 
+         sh-4.4# exit
+         switch_root:/# exit 
+         logout 
+         after some time the login screen will loaded where you can login with root in linux
+         now you have your root shell for ex:-
+         root@localhost# 
+         here you have to write one command to unlock the /etc/shadow file feom 'jail'.
+         # restorecon /etc/shadow
+         
+         
+         HERE Now you break your password  successfully
+                                                                THANK YOU
